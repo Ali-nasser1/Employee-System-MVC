@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Department>
+@{
+    ViewData["Title"] = "All Departments";
+}
+
+<a asp-action="Create" class="btn btn-success">Create a new department</a>
+@if(Model.Count() >= 1)
+{
+    <h1 class="text-success mt-3">All Departments</h1>
+    <br />
+    <table class="table table-striped table-hover mt-3">
+        <thead>
+            <tr>
+                <td>@Html.DisplayNameFor(D => D.Code)</td>
+                <td>@Html.DisplayNameFor(D => D.Name)</td>
+                <td>@Html.DisplayNameFor(D => D.CreatedDate)</td>
+                <td>Details</td>
+                <td>Update</td>
+                <td>Delete</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var department in Model)
+            {
+                <tr>
+                    <td>@department.Code</td>
+                    <td>@department.Name</td>
+                    <td>@department.CreatedDate</td>
+                    <td> <a asp-action="Details" asp-route-id="@department.Id"> <i class="fa-solid fa-eye"></i> </a> </td>
+                    <td><a asp-action="Edit" asp-route-id="@department.Id"> <i class="fa-solid fa-pen-to-square"></i> </a></td>
+                    <td><a asp-action="Delete" asp-route-id="@department.Id"> <i class="fa-solid fa-trash"></i> </a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="mt-5 alert alert-warning">
+        There is no any departments
+    </div>
+}
