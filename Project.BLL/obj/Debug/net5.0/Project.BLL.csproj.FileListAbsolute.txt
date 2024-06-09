@@ -28,3 +28,4 @@ D:\MVC Project\Employee System\Project.BLL\obj\Debug\net5.0\Project.BLL.dll
 D:\MVC Project\Employee System\Project.BLL\obj\Debug\net5.0\refint\Project.BLL.dll
 D:\MVC Project\Employee System\Project.BLL\obj\Debug\net5.0\Project.BLL.pdb
 D:\MVC Project\Employee System\Project.BLL\obj\Debug\net5.0\ref\Project.BLL.dll
+D:\MVC Project\Employee System\Project.BLL\obj\Debug\net5.0\Project.BLL.sourcelink.json

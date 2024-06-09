@@ -22,3 +22,4 @@ D:\MVC Project\Employee System\Project.DAL\obj\Debug\net5.0\Project.DAL.dll
 D:\MVC Project\Employee System\Project.DAL\obj\Debug\net5.0\refint\Project.DAL.dll
 D:\MVC Project\Employee System\Project.DAL\obj\Debug\net5.0\Project.DAL.pdb
 D:\MVC Project\Employee System\Project.DAL\obj\Debug\net5.0\ref\Project.DAL.dll
+D:\MVC Project\Employee System\Project.DAL\obj\Debug\net5.0\Project.DAL.sourcelink.json

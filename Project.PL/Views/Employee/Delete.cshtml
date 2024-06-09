@@ -1,0 +1,57 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-success">Are you sure you want to delete @Model.Name employee</h1>
+<br />
+<form asp-action="Delete">
+    <div class="form-group">
+        <label class="col-form-label" asp-for="@Model.Name"></label>
+        <input class="form-control" asp-for="@Model.Name" />
+        <span asp-validation-for="@Model.Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label" asp-for="@Model.Age"></label>
+        <input class="form-control" asp-for="@Model.Age" />
+        <span asp-validation-for="@Model.Age" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label" asp-for="@Model.Address"></label>
+        <input class="form-control" asp-for="@Model.Address" />
+        <span asp-validation-for="@Model.Address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label" asp-for="@Model.Salary"></label>
+        <input class="form-control" asp-for="@Model.Salary" />
+        <span asp-validation-for="@Model.Salary" class=" text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label" asp-for="@Model.Email"></label>
+        <input class="form-control" asp-for="@Model.Email" />
+        <span asp-validation-for="@Model.Email" class=" text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label" asp-for="@Model.PhoneNumber"></label>
+        <input class="form-control" asp-for="@Model.PhoneNumber" />
+        <span asp-validation-for="@Model.PhoneNumber" class=" text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label" asp-for="@Model.HireDate"></label>
+        <input class="form-control" asp-for="@Model.HireDate" />
+        <span asp-validation-for="@Model.HireDate" class=" text-danger"></span>
+    </div>
+    <div class="form-group form-check">
+        <label class="form-check-label" for="flexCheckDefault" style="font-size: 20px;margin-right: 30px; " asp-for="@Model.IsActive"></label>
+        <input class="form-check-input" type="checkbox" value="true" asp-for="@Model.IsActive" style="width: 30px; height: 30px;" />
+    </div>
+    <button type="submit" value="Delete" class="btn btn-danger mr-1">Delete</button>
+    <a asp-action="Index" class="btn btn-light">cancel</a>
+</form>
+

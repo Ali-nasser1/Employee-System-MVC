@@ -886,3 +886,8 @@ D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\refint\Project.PL.dll
 D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Project.PL.pdb
 D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Project.PL.genruntimeconfig.cache
 D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\ref\Project.PL.dll
+D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Project.PL.sourcelink.json
+D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Employee\Index.cshtml.g.cs
+D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Employee\Create.cshtml.g.cs
+D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Employee\Details.cshtml.g.cs
+D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Employee\Edit.cshtml.g.cs
