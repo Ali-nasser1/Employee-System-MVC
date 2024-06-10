@@ -10,8 +10,8 @@ using Project.DAL.Contexts;
 namespace Project.DAL.Migrations
 {
     [DbContext(typeof(EmployeeSystemDbContext))]
-    [Migration("20240610083942_EmployeeDepartmentRelationship")]
-    partial class EmployeeDepartmentRelationship
+    [Migration("20240610095254_EmployeeDepartmentRelation")]
+    partial class EmployeeDepartmentRelation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

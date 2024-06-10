@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Project.BLL.Interfaces;
 using Project.DAL.Contexts;
+using Project.DAL.Models;
 
 namespace Project.BLL.Repositories
 {
@@ -30,7 +32,13 @@ namespace Project.BLL.Repositories
 
         public IEnumerable<T> GetAll()
         {
+            if(typeof(T) == typeof(Employee))
+            {
+                return (IEnumerable<T>)dbContext.employees.Include(E => E.Department).ToList();
+            }
+
             return dbContext.Set<T>().ToList();
+            
         }
 
         public T GetById(int id)

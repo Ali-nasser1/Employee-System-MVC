@@ -17,7 +17,7 @@ namespace Project.DAL.Models
         [Required(ErrorMessage = "the code is required")]
         public string Code { get; set; }
         public DateTime CreatedDate { get; set; }
-        [InverseProperty(nameof(Department))]
-        ICollection<Employee> Employees { get; set; } = new HashSet<Employee>();
+        //[InverseProperty(nameof(Department))]
+        public ICollection<Employee> Employees { get; set; } = new HashSet<Employee>();
     }
 }

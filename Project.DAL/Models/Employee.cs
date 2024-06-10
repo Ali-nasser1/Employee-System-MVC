@@ -30,9 +30,10 @@ namespace Project.DAL.Models
         public string PhoneNumber { get; set; }
         public DateTime HireDate { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
+
         [ForeignKey("Department")]
         public int? DepartmentId { get; set; }
-        [InverseProperty(nameof(Employee))]
-        Department Department { get; set; }
+        //[InverseProperty(nameof(Employee))]
+        public Department Department { get; set; }
     }
 }

@@ -8,9 +8,12 @@ namespace Project.PL.Controllers
     {
         private readonly IEmployeeRepository employeeRepository;
 
-        public EmployeeController(IEmployeeRepository _employeeRepository)
+        public IDepartmentRepository departmentRepository;
+
+        public EmployeeController(IEmployeeRepository _employeeRepository, IDepartmentRepository _departmentRepository)
         {
             employeeRepository = _employeeRepository;
+            departmentRepository = _departmentRepository;
         }
         public IActionResult Index()
         {
@@ -20,6 +23,7 @@ namespace Project.PL.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            ViewBag.Departments = departmentRepository.GetAll();
             return View();
         }
         [HttpPost]
