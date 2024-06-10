@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,9 @@ namespace Project.DAL.Models
         public string PhoneNumber { get; set; }
         public DateTime HireDate { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
-
+        [ForeignKey("Department")]
+        public int? DepartmentId { get; set; }
+        [InverseProperty(nameof(Employee))]
+        Department Department { get; set; }
     }
 }
