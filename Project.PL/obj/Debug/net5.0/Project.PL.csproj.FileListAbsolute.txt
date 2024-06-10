@@ -892,3 +892,8 @@ D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Employee\
 D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Employee\Details.cshtml.g.cs
 D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Employee\Edit.cshtml.g.cs
 D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Employee\Delete.cshtml.g.cs
+D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Shared\_ButtonsPartialView.cshtml.g.cs
+D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Employee\PartialViews\CreateEditPartialView.cshtml.g.cs
+D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Employee\PartialViews\DetailsDeletePartialView.cshtml.g.cs
+D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Department\PartialViews\CreateEditPartialView.cshtml.g.cs
+D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Department\PartialViews\DetailsDeletePartialView.cshtml.g.cs

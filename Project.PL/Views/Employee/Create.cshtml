@@ -6,57 +6,12 @@
 <h1 class="text-success">Create a new employee</h1>
 <br />
 <form asp-action="Create">
-    <div class="form-group">
-        <label class="col-form-label" asp-for= "@Model.Name"></label>
-        <input class="form-control" asp-for="@Model.Name"/>
-        <span asp-validation-for="@Model.Name" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label class="col-form-label" asp-for="@Model.Age"></label>
-        <input class="form-control" asp-for="@Model.Age" />
-        <span asp-validation-for="@Model.Age" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label class="col-form-label" asp-for="@Model.Address"></label>
-        <input class="form-control" asp-for="@Model.Address" />
-        <span asp-validation-for="@Model.Address" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label class="col-form-label" asp-for="@Model.Salary"></label>
-        <input class="form-control" asp-for="@Model.Salary" />
-        <span asp-validation-for="@Model.Salary" class=" text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label class="col-form-label" asp-for="@Model.Email"></label>
-        <input class="form-control" asp-for="@Model.Email" />
-        <span asp-validation-for="@Model.Email" class=" text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label class="col-form-label" asp-for="@Model.PhoneNumber"></label>
-        <input class="form-control" asp-for="@Model.PhoneNumber" />
-        <span asp-validation-for="@Model.PhoneNumber" class=" text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label class="col-form-label" asp-for="@Model.HireDate"></label>
-        <input class="form-control" asp-for="@Model.HireDate" />
-        <span asp-validation-for="@Model.HireDate" class=" text-danger"></span>
-    </div>
-    <div class="form-group form-check">
-        <label class="form-check-label" for="flexCheckDefault" style="font-size: 20px;margin-right: 30px; " asp-for="@Model.IsActive"></label>
-        <input class="form-check-input" type="checkbox" value="true" asp-for="@Model.IsActive" style="width: 30px; height: 30px;" />
-    </div>
+    <partial name="PartialViews/CreateEditPartialView" />
     <button type="submit" value="Submit" class="btn btn-primary mr-1">Submit</button>
     <a asp-action="Index" class="btn btn-light">Back to list</a>
 </form>
 
 @section ClientValidationSection
 {
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <partial name = "_ValidationScriptsPartial" />
 }

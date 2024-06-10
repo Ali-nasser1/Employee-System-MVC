@@ -26,9 +26,7 @@
                     <td>@department.Code</td>
                     <td>@department.Name</td>
                     <td>@department.CreatedDate</td>
-                    <td> <a asp-action="Details" asp-route-id="@department.Id"> <i class="fa-solid fa-eye"></i> </a> </td>
-                    <td><a asp-action="Edit" asp-route-id="@department.Id"> <i class="fa-solid fa-pen-to-square"></i> </a></td>
-                    <td><a asp-action="Delete" asp-route-id="@department.Id"> <i class="fa-solid fa-trash"></i> </a></td>
+                    <partial name = "_ButtonsPartialView" model="@department.Id" />
                 </tr>
             }
         </tbody>
