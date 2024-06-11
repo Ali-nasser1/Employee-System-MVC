@@ -11,13 +11,12 @@ namespace Project.DAL.Models
     public class Department
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "the name is required")]
+        [Required]
         [MaxLength(50)]
         public string Name { get; set; }
-        [Required(ErrorMessage = "the code is required")]
+        [Required]
         public string Code { get; set; }
         public DateTime CreatedDate { get; set; }
-        //[InverseProperty(nameof(Department))]
         public ICollection<Employee> Employees { get; set; } = new HashSet<Employee>();
     }
 }
