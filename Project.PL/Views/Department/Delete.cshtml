@@ -4,7 +4,8 @@
 }
 
 <h1>Are you sure you want to delete @Model.Name department</h1>
-<div asp-validation-summary="All" class="text-danger"></div>
-<partial name="PartialViews/DetailsDeletePartialView" />
-<button type="submit" value="Delete" class="btn btn-danger mr-1">Delete</button>
-<a asp-action="Index" class="btn btn-light">cancel</a>
+<form asp-action="Delete">
+    <partial name="PartialViews/DetailsDeletePartialView" />
+    <button type="submit" value="Delete" class="btn btn-danger mr-1">Delete</button>
+    <a asp-action="Index" class="btn btn-light">cancel</a>
+</form>

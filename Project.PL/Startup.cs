@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Project.BLL.Interfaces;
 using Project.BLL.Repositories;
 using Project.DAL.Contexts;
+using Project.PL.MappingProfiles;
 
 namespace Project.PL
 {
@@ -34,6 +35,7 @@ namespace Project.PL
             }); // depandency injection
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddAutoMapper(M => M.AddProfile(new EmployeeProfile()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

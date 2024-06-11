@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Project.BLL.Interfaces;
 using Project.DAL.Contexts;
 using Project.DAL.Models;
@@ -21,6 +22,11 @@ namespace Project.BLL.Repositories
         public IQueryable<Employee> GetEmployeesByAddress(string address)
         {
             return dbContext.employees.Where(E => E.Address == address);
+        }
+
+        public IQueryable<Employee> GetEmployeesByName(string Name)
+        {
+            return dbContext.employees.Where(E => E.Name.ToLower().Contains(Name.ToLower())).Include(E => E.Department);
         }
     }
 }

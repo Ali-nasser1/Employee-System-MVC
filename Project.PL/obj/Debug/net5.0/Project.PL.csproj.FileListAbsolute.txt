@@ -541,7 +541,6 @@ D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Extens
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Xml.dll
-D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
@@ -567,8 +566,6 @@ D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Extens
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Extensions.ObjectPool.dll
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
-D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.dll
-D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Extensions.Primitives.dll
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Extensions.WebEncoders.dll
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.JSInterop.dll
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\Microsoft.Net.Http.Headers.dll
@@ -667,7 +664,6 @@ D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\System.Reflectio
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\System.Resources.Reader.dll
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\System.Resources.ResourceManager.dll
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\System.Resources.Writer.dll
-D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\System.Runtime.CompilerServices.Unsafe.dll
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\System.Runtime.CompilerServices.VisualC.dll
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\System.Runtime.dll
 D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\refs\System.Runtime.Extensions.dll
@@ -897,3 +893,9 @@ D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Employee\
 D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Employee\PartialViews\DetailsDeletePartialView.cshtml.g.cs
 D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Department\PartialViews\CreateEditPartialView.cshtml.g.cs
 D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Department\PartialViews\DetailsDeletePartialView.cshtml.g.cs
+D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\AutoMapper.dll
+D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

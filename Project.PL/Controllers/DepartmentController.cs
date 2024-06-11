@@ -41,7 +41,7 @@ namespace Project.PL.Controllers
             var department = departmentRepository.GetById(id.Value);
             if(department is null)
                 return NotFound();
-            return View(department);
+            return View(ViewName,department);
         }
 
         public IActionResult Edit(int? id) // retrieve data
