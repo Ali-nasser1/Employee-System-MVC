@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Project.BLL.Interfaces;
 using Project.DAL.Models;
+using Project.PL.Utilities;
 using Project.PL.ViewModels;
 
 namespace Project.PL.Controllers
@@ -40,9 +42,10 @@ namespace Project.PL.Controllers
         {
             if (ModelState.IsValid)
             {
+                employee.ImageName = DocumentSettings.UploadFile(employee.Image, "Images");
                var MappedEmployee = mapper.Map<EmployeeViewModel, Employee>(employee); // convert from X to Y the object Z
 
-               unitOfWork.EmployeeRepository.Add(MappedEmployee);
+                unitOfWork.EmployeeRepository.Add(MappedEmployee);
                 int Result = unitOfWork.Complete();
                 if (Result > 0)
                 {

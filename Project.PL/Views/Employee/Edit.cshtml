@@ -5,7 +5,7 @@
 
 <h1 class="text-success">Edit @Model.Name employee</h1>
 <div asp-validation-summary="All" class="text-danger"></div>
-<form asp-action="Edit">
+<form asp-action="Edit" enctype="multipart/form-data">
     <partial name="PartialViews/CreateEditPartialView" />
     <button type="submit" value="Save" class="btn btn-primary mr-1">Save</button>
     <a asp-action="Index" class="btn btn-light">Back to list</a>

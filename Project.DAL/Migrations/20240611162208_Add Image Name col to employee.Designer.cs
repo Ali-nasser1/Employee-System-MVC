@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project.DAL.Contexts;
 
 namespace Project.DAL.Migrations
 {
     [DbContext(typeof(EmployeeSystemDbContext))]
-    partial class EmployeeSystemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240611162208_Add Image Name col to employee")]
+    partial class AddImageNamecoltoemployee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

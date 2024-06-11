@@ -26,6 +26,7 @@
     <table class="table table-striped table-hover mt-3">
         <thead>
             <tr>
+                <td>@Html.DisplayNameFor(D => D.Image)</td>
                 <td>@Html.DisplayNameFor(D => D.Name)</td>
                 <td>@Html.DisplayNameFor(D => D.Age)</td>
                 <td>@Html.DisplayNameFor(D => D.Department)</td>
@@ -44,6 +45,16 @@
             @foreach (var employee in Model)
             {
                 <tr>
+                    <td>
+                        @if (!string.IsNullOrEmpty(employee.ImageName))
+                        {
+                            <img src="~/Files/Images/@employee.ImageName" class="rounded-circle" width="45" height="45" alt="Employee Image" />
+                        }
+                        else
+                        {
+                            <i class="fa-solid fa-user" style="font-size: 40px;"></i>
+                        }
+                    </td>
                     <td>@employee.Name</td>
                     <td>@employee.Age</td>
                     <td>@Html.DisplayFor(E => employee.Department.Name)</td>

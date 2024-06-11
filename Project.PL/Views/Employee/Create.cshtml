@@ -5,7 +5,7 @@
 
 <h1 class="text-success">Create a new employee</h1>
 <br />
-<form asp-action="Create">
+<form asp-action="Create" enctype="multipart/form-data">
     <partial name="PartialViews/CreateEditPartialView" />
     <button type="submit" value="Submit" class="btn btn-primary mr-1">Submit</button>
     <a asp-action="Index" class="btn btn-light">Back to list</a>
