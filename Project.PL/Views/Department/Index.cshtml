@@ -2,7 +2,12 @@
 @{
     ViewData["Title"] = "All Departments";
 }
-
+@if(TempData["Message"] is not null)
+{
+    <div id = "MessageDiv" class="alert alert-success mt-3">
+        @TempData["Message"]
+    </div>
+}
 <a asp-action="Create" class="btn btn-success">Create a new department</a>
 @if(Model.Count() >= 1)
 {

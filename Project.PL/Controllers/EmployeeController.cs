@@ -45,7 +45,11 @@ namespace Project.PL.Controllers
             {
                var MappedEmployee = mapper.Map<EmployeeViewModel, Employee>(employee); // convert from X to Y the object Z
 
-                employeeRepository.Add(MappedEmployee);
+               var Result = employeeRepository.Add(MappedEmployee);
+                if(Result > 0)
+                {
+                    TempData["Message"] = "The Employee is created";
+                }
                 return RedirectToAction(nameof(Index));
             }
             return View(employee);

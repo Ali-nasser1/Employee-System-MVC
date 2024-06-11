@@ -28,7 +28,11 @@ namespace Project.PL.Controllers
         {
             if(ModelState.IsValid)
             {
-                departmentRepository.Add(department);
+                int Result = departmentRepository.Add(department);
+                if(Result > 0)
+                {
+                    TempData["Message"] = "Department is created";  
+                }
                 return RedirectToAction(nameof(Index));
             }
             return View(department);
