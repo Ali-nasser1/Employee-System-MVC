@@ -80,6 +80,7 @@ namespace Project.PL.Controllers
             {
                 try
                 {
+                    employee.ImageName = DocumentSettings.UploadFile(employee.Image, "Images");
                     var MappedEmployee = mapper.Map<EmployeeViewModel, Employee>(employee);
                     unitOfWork.EmployeeRepository.Update(MappedEmployee);
                     unitOfWork.Complete();
@@ -108,7 +109,11 @@ namespace Project.PL.Controllers
                 {
                     var MappedEmployee = mapper.Map<EmployeeViewModel, Employee>(employee);
                     unitOfWork.EmployeeRepository.Delete(MappedEmployee);
-                    unitOfWork.Complete();
+                    var Result = unitOfWork.Complete();
+                    if(Result > 0 && employee.ImageName is not null)
+                    {
+                        DocumentSettings.DeleteFile(employee.ImageName, "Images");
+                    }
                     return RedirectToAction(nameof(Index));
                 }
                 catch (System.Exception ex)

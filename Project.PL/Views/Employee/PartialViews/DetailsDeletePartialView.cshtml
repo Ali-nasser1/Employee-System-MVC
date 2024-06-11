@@ -1,4 +1,16 @@
 ﻿@model EmployeeViewModel
+
+<div class="form-group">
+    @if (!string.IsNullOrEmpty(Model.ImageName))
+    {
+        <img src="~/Files/Images/@Model.ImageName" class="rounded" height="250" width="250" />
+    }
+    else
+    {
+        <i class="fa-solid fa-user" style="font-size: 250px;"></i>
+    }
+    <input asp-for="ImageName" hidden/>
+</div>
 <div class="form-group">
     <label class="col-form-label" asp-for="@Model.Name"></label>
     <input readonly class="form-control" asp-for="@Model.Name" />

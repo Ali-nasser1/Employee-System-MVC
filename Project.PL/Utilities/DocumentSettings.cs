@@ -20,5 +20,13 @@ namespace Project.PL.Utilities
             // return file name
             return fileName;
         }
+        public static void DeleteFile(string fileName, string folderName)
+        {
+            // 1. get file path
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\Files", folderName, fileName);
+            // 2. check if it not exist
+            if(File.Exists(filePath))
+                File.Delete(filePath);
+        }
     }
 }
