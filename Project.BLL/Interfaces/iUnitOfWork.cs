@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Project.BLL.Interfaces
 {
-    public interface iUnitOfWork
+    public interface iUnitOfWork : IDisposable
     {
         public IEmployeeRepository EmployeeRepository { get; set; }
         public IDepartmentRepository DepartmentRepository { get; set; }
+        int Complete();
     }
 }

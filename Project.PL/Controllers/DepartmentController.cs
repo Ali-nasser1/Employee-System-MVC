@@ -12,17 +12,17 @@ namespace Project.PL.Controllers
 {
     public class DepartmentController : Controller
     {
-        private readonly IDepartmentRepository departmentRepository;
+        private readonly iUnitOfWork unitOfWork;
         private readonly IMapper mapper;
 
-        public DepartmentController(IDepartmentRepository _departmentRepository, IMapper _mapper)
+        public DepartmentController(iUnitOfWork _unitOfWork, IMapper _mapper)
         {
-            departmentRepository = _departmentRepository;
+            unitOfWork = _unitOfWork;
             mapper = _mapper;
         }
         public IActionResult Index()
         {
-            var departments = departmentRepository.GetAll();
+            var departments = unitOfWork.DepartmentRepository.GetAll();
             var MappedDepartments = mapper.Map<IEnumerable<Department>, IEnumerable<DepartmentViewModel>>(departments);
             return View(MappedDepartments);
         }
@@ -37,7 +37,8 @@ namespace Project.PL.Controllers
             if(ModelState.IsValid)
             {
                 var MappedDepartment = mapper.Map<DepartmentViewModel, Department>(department);
-                int Result = departmentRepository.Add(MappedDepartment);
+                 unitOfWork.DepartmentRepository.Add(MappedDepartment);
+                int Result = unitOfWork.Complete();
                 if(Result > 0)
                 {
                     TempData["Message"] = "Department is created";  
@@ -51,7 +52,7 @@ namespace Project.PL.Controllers
         {
             if (id is null)
                 return BadRequest();
-            var department = departmentRepository.GetById(id.Value);
+            var department = unitOfWork.DepartmentRepository.GetById(id.Value);
             if(department is null)
                 return NotFound();
             var MappedDepartment = mapper.Map<Department, DepartmentViewModel>(department);
@@ -72,7 +73,8 @@ namespace Project.PL.Controllers
                 try
                 {
                     var MappedDepartment = mapper.Map<DepartmentViewModel, Department>(department);
-                    departmentRepository.Update(MappedDepartment);
+                    unitOfWork.DepartmentRepository.Update(MappedDepartment);
+                    unitOfWork.Complete();
                     return RedirectToAction(nameof(Index));
                 }
                 catch(System.Exception ex)
@@ -97,7 +99,8 @@ namespace Project.PL.Controllers
                 try
                 {
                     var MappedDepartment = mapper.Map<DepartmentViewModel, Department>(department);
-                    departmentRepository.Delete(MappedDepartment);
+                    unitOfWork.DepartmentRepository.Delete(MappedDepartment);
+                    unitOfWork.Complete();
                     return RedirectToAction(nameof(Index));
                 }
                 catch(System.Exception ex)

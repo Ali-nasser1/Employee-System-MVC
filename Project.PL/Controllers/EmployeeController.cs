@@ -42,8 +42,9 @@ namespace Project.PL.Controllers
             {
                var MappedEmployee = mapper.Map<EmployeeViewModel, Employee>(employee); // convert from X to Y the object Z
 
-               var Result = unitOfWork.EmployeeRepository.Add(MappedEmployee);
-                if(Result > 0)
+               unitOfWork.EmployeeRepository.Add(MappedEmployee);
+                int Result = unitOfWork.Complete();
+                if (Result > 0)
                 {
                     TempData["Message"] = "The Employee is created";
                 }
@@ -78,6 +79,7 @@ namespace Project.PL.Controllers
                 {
                     var MappedEmployee = mapper.Map<EmployeeViewModel, Employee>(employee);
                     unitOfWork.EmployeeRepository.Update(MappedEmployee);
+                    unitOfWork.Complete();
                     return RedirectToAction(nameof(Index));
                 }
                 catch (System.Exception ex)
@@ -103,6 +105,7 @@ namespace Project.PL.Controllers
                 {
                     var MappedEmployee = mapper.Map<EmployeeViewModel, Employee>(employee);
                     unitOfWork.EmployeeRepository.Delete(MappedEmployee);
+                    unitOfWork.Complete();
                     return RedirectToAction(nameof(Index));
                 }
                 catch (System.Exception ex)
