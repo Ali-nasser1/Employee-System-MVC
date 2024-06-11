@@ -10,24 +10,21 @@ namespace Project.PL.Controllers
 {
     public class EmployeeController : Controller
     {
-        private readonly IEmployeeRepository employeeRepository;
-
-        public readonly IDepartmentRepository departmentRepository;
+        private readonly iUnitOfWork unitOfWork;
         private readonly IMapper mapper;
 
-        public EmployeeController(IEmployeeRepository _employeeRepository, IDepartmentRepository _departmentRepository, IMapper _mapper)
+        public EmployeeController(iUnitOfWork _unitOfWork, IMapper _mapper)
         {
-            employeeRepository = _employeeRepository;
-            departmentRepository = _departmentRepository;
+            unitOfWork = _unitOfWork;
             mapper = _mapper;
         }
         public IActionResult Index(string SearchValue)
         {
             IEnumerable<Employee> employees;
             if (string.IsNullOrEmpty(SearchValue))
-                employees = employeeRepository.GetAll();
+                employees = unitOfWork.EmployeeRepository.GetAll();
             else
-                employees = employeeRepository.GetEmployeesByName(SearchValue);
+                employees = unitOfWork.EmployeeRepository.GetEmployeesByName(SearchValue);
              
             var MappedEmployees = mapper.Map<IEnumerable<Employee>, IEnumerable<EmployeeViewModel>>(employees);
                 return View(MappedEmployees);
@@ -45,7 +42,7 @@ namespace Project.PL.Controllers
             {
                var MappedEmployee = mapper.Map<EmployeeViewModel, Employee>(employee); // convert from X to Y the object Z
 
-               var Result = employeeRepository.Add(MappedEmployee);
+               var Result = unitOfWork.EmployeeRepository.Add(MappedEmployee);
                 if(Result > 0)
                 {
                     TempData["Message"] = "The Employee is created";
@@ -59,7 +56,7 @@ namespace Project.PL.Controllers
         {
             if (id is null)
                 return BadRequest();
-            var employee = employeeRepository.GetById(id.Value);
+            var employee = unitOfWork.EmployeeRepository.GetById(id.Value);
             if (employee is null)
                 return NotFound();
             var MappedEmployee = mapper.Map<Employee, EmployeeViewModel>(employee);
@@ -80,7 +77,7 @@ namespace Project.PL.Controllers
                 try
                 {
                     var MappedEmployee = mapper.Map<EmployeeViewModel, Employee>(employee);
-                    employeeRepository.Update(MappedEmployee);
+                    unitOfWork.EmployeeRepository.Update(MappedEmployee);
                     return RedirectToAction(nameof(Index));
                 }
                 catch (System.Exception ex)
@@ -105,7 +102,7 @@ namespace Project.PL.Controllers
                 try
                 {
                     var MappedEmployee = mapper.Map<EmployeeViewModel, Employee>(employee);
-                    employeeRepository.Delete(MappedEmployee);
+                    unitOfWork.EmployeeRepository.Delete(MappedEmployee);
                     return RedirectToAction(nameof(Index));
                 }
                 catch (System.Exception ex)
