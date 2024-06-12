@@ -27,9 +27,9 @@ namespace Project.BLL.Repositories
             dbContext.Dispose();
         }
 
-        public int Complete()
+        public async Task<int> Complete()
         {
-            return dbContext.SaveChanges();
+            return await dbContext.SaveChangesAsync();
         }
     }
 }

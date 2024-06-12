@@ -1,10 +1,10 @@
 ﻿@model EmployeeViewModel
 @inject IDepartmentRepository DepartmentRepo
 @{
-    var departments = new SelectList(DepartmentRepo.GetAll(), "Id", "Name");
+    var departments = new SelectList(await DepartmentRepo.GetAll(), "Id", "Name");
 }
 <div class="form-group">
-    @if(!string.IsNullOrEmpty(Model.ImageName))
+    @if(!string.IsNullOrEmpty(Model?.ImageName))
     {
     <img src="~/Files/Images/@Model.ImageName" class="rounded" height="250" width="250" />
     }

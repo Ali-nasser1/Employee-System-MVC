@@ -18,32 +18,27 @@ namespace Project.BLL.Repositories
         {
             dbContext = _dbContext;
         }
-        public void Add(T item)
-         => dbContext.Add(item);
-
-
+        public async Task Add(T item)
+        =>  await dbContext.AddAsync(item);
         public void Delete(T item)
          => dbContext.Remove(item);
 
-        public IEnumerable<T> GetAll()
+        public async Task<IEnumerable<T>> GetAll()
         {
             if(typeof(T) == typeof(Employee))
             {
-                return (IEnumerable<T>)dbContext.employees.Include(E => E.Department).ToList();
+                return (IEnumerable<T>) await dbContext.employees.Include(E => E.Department).ToListAsync();
             }
 
-            return dbContext.Set<T>().ToList();
+            return await dbContext.Set<T>().ToListAsync();
             
         }
 
-        public T GetById(int id)
-        {
-            return dbContext.Set<T>().Find(id);
-        }
+        public async Task<T> GetById(int id)
+          => await dbContext.Set<T>().FindAsync(id);
+        
 
         public void Update(T item)
          => dbContext.Set<T>().Update(item);
-            
-        
     }
 }
