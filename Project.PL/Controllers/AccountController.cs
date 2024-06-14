@@ -83,6 +83,15 @@ namespace Project.PL.Controllers
 
 
 
-		#endregion
-	}
+        #endregion
+
+        #region LogOut
+        public async Task<IActionResult> LogOut()
+        {
+           await signInManager.SignOutAsync();
+           return RedirectToAction(nameof(Login));
+        }
+
+        #endregion
+    }
 }
