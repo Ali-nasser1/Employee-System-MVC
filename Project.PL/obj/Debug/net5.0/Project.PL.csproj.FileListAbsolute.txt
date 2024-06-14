@@ -903,3 +903,5 @@ D:\MVC Project\Employee System\Project.PL\bin\Debug\net5.0\Microsoft.Extensions.
 D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
 D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Shared\_AuthLayout.cshtml.g.cs
 D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Account\ResetPass.cshtml.g.cs
+D:\MVC Project\Employee System\Project.PL\obj\Debug\net5.0\Razor\Views\Account\CheckYourInbox.cshtml.g.cs

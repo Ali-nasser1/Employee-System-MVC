@@ -1,8 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Project.DAL.Models;
+using Project.PL.Utilities;
 using Project.PL.ViewModels;
 
 namespace Project.PL.Controllers
@@ -93,5 +95,44 @@ namespace Project.PL.Controllers
         }
 
         #endregion
-    }
+
+        #region Forget Password
+
+        public IActionResult ResetPass()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SendEmail(ResetPasswordViewModel model)
+        {
+            if(ModelState.IsValid)
+            {
+                var User = await userManager.FindByEmailAsync(model.Email);
+                if(User != null)
+                {
+                    var token = await userManager.GeneratePasswordResetTokenAsync(User);
+                    var ResetPasswordLink = Url.Action("ResetPass", "Account", new { email = model.Email, Token = token }, "https", Request.Scheme);
+                    var email = new Email()
+                    {
+                        Subjuect = "Reset the password",
+                        ToWhome = model.Email,
+                        Body = ResetPasswordLink
+					};
+                    EmailSettings.SendEmail(email);
+                    return RedirectToAction(nameof(CheckYourInbox));
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Email not exist you can register a new email!");
+                }
+            }
+            return View("ResetPass", model);
+        }
+        public IActionResult CheckYourInbox()
+        {
+            return View();
+        }
+		#endregion
+	}
 }

@@ -1,0 +1,26 @@
+﻿@model ResetPasswordViewModel
+@{
+    ViewData["Title"] = "ResetPass";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+
+<div asp-validation-summary="All"> </div>
+<h1> Reset your password</h1>
+<div class="main-agileinfo">
+	<div class="agileits-top">
+		<form asp-action="SendEmail" method="post">
+
+			<input class="text" asp-for="Email" placeholder="Your email address" required="">
+			<span asp-validation-for="Email" class="text-warning"></span>
+			<br />
+			<input type="submit" value="Reset password">
+		</form>
+		<p>Want to back to log in page? <a asp-action="LogIn"> Back to log in page!</a></p>
+	</div>
+</div>
+
+@section ClientValidationSection
+{
+	<partial name="_ValidationScriptsPartial" />
+}
+
