@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Project.BLL.Interfaces;
@@ -11,6 +12,7 @@ using Project.PL.ViewModels;
 
 namespace Project.PL.Controllers
 {
+    [Authorize]
     public class DepartmentController : Controller
     {
         private readonly iUnitOfWork unitOfWork;

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -46,7 +47,14 @@ namespace Project.PL
                 options.Password.RequireUppercase = true;
                 options.Password.RequireLowercase = true;
                 options.Password.RequireDigit = true;
-            }).AddEntityFrameworkStores<EmployeeSystemDbContext>();
+            }).AddEntityFrameworkStores<EmployeeSystemDbContext>()
+			  .AddDefaultTokenProviders();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                     .AddCookie(options =>
+                     {
+                         options.LoginPath = "Account/Login";
+                         options.AccessDeniedPath = "Home/Error";
+                     });
             services.AddAuthentication();
         }
 
@@ -67,14 +75,14 @@ namespace Project.PL
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Account}/{action=Login}/{id?}");
             });
         }
     }
